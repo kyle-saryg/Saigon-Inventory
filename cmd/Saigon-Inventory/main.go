@@ -3,10 +3,12 @@ package main
 import (
 	"fmt"
 	"net/http"
+
+	"github.com/kyle-saryg/Saigon-Inventory/internal/routes"
 )
 
 func main() {
-	router := router.NewRouter()
+	router := routes.NewRouter()
 
 	port := 8000
 	// Sprintf returns a string accompanying the specified formatter
