@@ -3,10 +3,12 @@ package routes
 import (
 	"fmt"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 func NewRouter() http.Handler {
-	mux := http.NewServeMux()
+	mux := mux.NewRouter()
 
 	// Define API endpoints
 	mux.HandleFunc("/", indexHandler)
