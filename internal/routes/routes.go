@@ -12,12 +12,17 @@ func NewRouter() http.Handler {
 
 	// Define API endpoints
 	mux.HandleFunc("/", indexHandler)
-	mux.HandleFunc("/api/data", apiDataHandler)
+	mux.HandleFunc("/api/list", apiDataHandler)
+	mux.HandleFunc("/api/add", apiAddItem)
 	return mux
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "Index Endpoint")
+	fmt.Fprint(w, "Index Endpoint")
+}
+
+func apiAddItem(w http.ResponseWriter, r *http.Request) {
+
 }
 
 func apiDataHandler(w http.ResponseWriter, r *http.Request) {
